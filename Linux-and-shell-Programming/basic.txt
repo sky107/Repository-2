@@ -1,0 +1,13 @@
+pwd => to show current dir
+su => used to switch to root user
+su <username>
+sudo to exectute commands that requires super user privilege
+
+
+
+ls *.html => will display all files with html extension
+
+ls -a 
+
+ls -l
+
