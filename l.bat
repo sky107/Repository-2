@@ -1,1 +1,1 @@
-g++ main.cpp -o main7.exe && cls && echo "Enter Input" && main7.exe
+g++ main.cpp -o main8.exe && cls && echo "Enter Input" && main8.exe
