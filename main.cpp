@@ -28,7 +28,7 @@ using namespace std;
 
 typedef vector<int> vi;
 typedef priority_queue<int> PQ;
-typedef priority_queue<int, vector<int>, greater<int>> PQmin;
+typedef priority_queue<int, vector<int>, greater<int> > PQmin;
 
 constexpr int md = (int)1e9 + 7;
 const int dx[] = {-1, 0, 1, 0, 1, 1, -1, -1};
@@ -64,6 +64,31 @@ void db(string s, B b) {
   cerr << s << " :=> " << b << '\n';
 }
 
+template <typename T>
+class fenwick {
+ public:
+  vector<T> fenw;
+  int n;
+
+  fenwick(int _n) : n(_n) { fenw.resize(n); }
+
+  void modify(int x, T v) {
+    while (x < n) {
+      fenw[x] += v;
+      x |= (x + 1);
+    }
+  }
+
+  T get(int x) {
+    T v{};
+    while (x >= 0) {
+      v += fenw[x];
+      x = (x & (x + 1)) - 1;
+    }
+    return v;
+  }
+};
+
 function<void(bool)> ps = [=](bool args) { cout << (args ? "YES\n" : "NO\n"); };
 function<bool(int, int, int, int)> iv = [=](int x, int y, int r, int c) {
   return (x >= 0 && y >= 0 && x < r and y < c);
@@ -82,46 +107,23 @@ long long power(int a, int n) {
   return ans;
 }
 
-int n, cnt = 1;
-vector<vector<int>> ans;
-vector<int> vis;
-map<int, vector<int>> g;
-
-void dfs(int s) {
-  if (vis[s]) return;
-  vis[s] = true;
-
-  for (auto e : g[s]) {
-    if (vis[e]) continue;
-    cnt++;
-    dfs(e);
-  }
-}
 signed main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
   int tst(1);
   cin >> tst;
   while (tst--) {
+    int n;
     cin >> n;
-    int an;
-    cin >> an;
-    vector<pair<int, int>> a(an);
-    vis = vector<int>(n, false);
-    for (int i = 0; i < an; i++) {
-      cin >> a[i].first >> a[i].second;
-      g[a[i].first].push_back(a[i].second);
-      g[a[i].second].push_back(a[i].first);
-    }
-    int ans = 1;
+    vi a(n);
+    cin >> a;
+    long long s = 0;
+
     for (int i = 0; i < n; i++) {
-      if (vis[i] == false) {
-        dfs(i);
-        cout << cnt << '\n';
-        ans *= cnt;
-      }
-      cnt = 1;
+      s += a[i];
     }
+    long long k = s % n;
+    long long ans = k * (n - k);
     cout << ans << '\n';
   }
 }
