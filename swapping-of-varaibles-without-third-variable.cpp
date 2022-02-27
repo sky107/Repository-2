@@ -99,11 +99,16 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    if (x.first == x.second) {
-    }
+    // swap two numbers  without third vaiable
+    int a, b;
+    cin >> a >> b;
+
+    cout << "before swapping " << a << " " << b << '\n';
+
+    b = a + b;
+    a = b - a;
+    b = (b - a);
+
+    cout << "after swapping " << a << " " << b << '\n';
   }
 }

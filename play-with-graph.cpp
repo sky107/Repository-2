@@ -28,7 +28,7 @@ using namespace std;
 
 typedef vector<int> vi;
 typedef priority_queue<int> PQ;
-typedef priority_queue<int, vector<int>, greater<int> > PQmin;
+typedef priority_queue<int, vector<int>, greater<int>> PQmin;
 
 constexpr int md = (int)1e9 + 7;
 const int dx[] = {-1, 0, 1, 0, 1, 1, -1, -1};
@@ -97,13 +97,36 @@ signed main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
   int tst(1);
-  cin >> tst;
+  // cin >> tst;l
   while (tst--) {
     int n;
     cin >> n;
-    string s;
-    cin >> s;
-    if (x.first == x.second) {
+
+    map<int, set<int>> g;
+
+    for (int i = 0; i < n; i++) {
+      int u, v;
+      cin >> u >> v;
+      g[u].insert(v);
+    }
+
+    queue<int> q;
+    map<int, bool> vis;
+    q.push(1);
+
+    while (q.size()) {
+      int f = q.front();
+      q.pop();
+      vis[f] = true;
+      for (auto e : g[f]) {
+        if (!vis[e]) {
+          cout << f << ' ';
+          q.push(e);
+        }
+      }
     }
   }
 }
+
+// when one number exists single time in graph use set to avoid  false
+// results in graph

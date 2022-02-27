@@ -28,7 +28,7 @@ using namespace std;
 
 typedef vector<int> vi;
 typedef priority_queue<int> PQ;
-typedef priority_queue<int, vector<int>, greater<int> > PQmin;
+typedef priority_queue<int, vector<int>, greater<int>> PQmin;
 
 constexpr int md = (int)1e9 + 7;
 const int dx[] = {-1, 0, 1, 0, 1, 1, -1, -1};
@@ -99,11 +99,47 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
+    map<char, vector<char>> g;
+
     int n;
     cin >> n;
-    string s;
-    cin >> s;
-    if (x.first == x.second) {
+    for (int i = 0; i < n; i++) {
+      char x, y;
+      cin >> x >> y;
+      g[x].push_back(y);
+      // g[y].push_back(x);
+    }
+
+    map<char, bool> vis;
+
+    function<void(char)> dfs = [&](char s) {
+      if (vis[s]) return;
+      vis[s] = true;
+      for (auto e : g[s]) {
+        if (!vis[e]) {
+          cout << e << ' ';
+          dfs(e);
+        }
+      }
+    };
+    // cout << 's' << ' ';
+    // dfs('s');
+    // vis.clear();
+
+    queue<char> q;
+    q.push('a');
+    vis['s'] = true;
+
+    while (q.size()) {
+      char f = q.front();
+      q.pop();
+      cout << f << ' ';
+      for (auto e : g[f]) {
+        if (!vis[e]) {
+          q.push(e);
+          vis[e] = true;
+        }
+      }
     }
   }
 }
