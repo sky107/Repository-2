@@ -67,22 +67,24 @@ signed main() {
     for (int &e : a)
       cin >> e;
 
-    for (int pass = 1; pass <= (n - 1); pass++) {
-      int fg = 0;
+    for (int i = 0; i <= (n - 2); i++) {
+      int smallest = INT_MAX;
+      int idx = i;
+      for (int j = i + 1; j <= (n - 1); j++) {
 
-      for (int j = 0; j <= (n - 2); j++) {
-
-        if (a[j] > a[j + 1]) {
-          swap(a[j], a[j + 1]);
-          fg = 1;
+        if (a[j] < smallest) {
+          smallest = a[j];
+          idx = j;
         }
       }
 
-      if (fg == 0) // as all are already sorted now
-        break;
+      if (a[i] > smallest) {
+        swap(a[i], a[idx]);
+      }
     }
 
     for (auto e : a)
       cout << e << " ";
+    cout << '\n';
   }
 }
