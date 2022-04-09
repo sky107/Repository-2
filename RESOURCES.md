@@ -2,7 +2,8 @@ https://codeahoy.com/2017/08/11/caching-strategies-and-how-to-choose-the-right-o
 
 
 
-https://pastebin.com/hWdxVer2{
+----------------
+{
   // To discover more customization and example client configurations, see
   // https://lsp.sublimetext.io
 
