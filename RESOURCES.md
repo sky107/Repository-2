@@ -1,5 +1,17 @@
 https://codeahoy.com/2017/08/11/caching-strategies-and-how-to-choose-the-right-one/
 
+---------------
+
+
+https://codeforces.com/blog/entry/72952
+
+
+Add Key bindings => Cmd + Enter to compile & run
+
+Add cf to usr/local/bin/cf  & update to preferneces 
+
+Cmdl + Shfit + U form chrome extension upload
+
 
 
 ----------------
