@@ -1,3 +1,9 @@
+// Problem: Non Adjacent Flips
+// Contest: CodeChef - CodeChef Starters 33 Division 2 (Rated)
+// URL: https://www.codechef.com/START33B/problems/NONADJFLIP
+// Memory Limit: 256 MB
+// Time Limit: 500 ms
+
 /**
  * Siddharth Kumar Yadav
  * sky has no limits!
@@ -99,13 +105,21 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    string s;
-    cin >> s;
-    bool ok = s.find("010") != string::npos;
-    bool ok2 = s.find("101") != string::npos;
-    if (ok || ok2) {
-      cout << "Good\n";
-    } else
-      cout << "Bad\n";
+  	
+  	
+  		int n;
+  		cin >>n;
+  		
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
   }
 }

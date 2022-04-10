@@ -99,13 +99,21 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    string s;
-    cin >> s;
-    bool ok = s.find("010") != string::npos;
-    bool ok2 = s.find("101") != string::npos;
-    if (ok || ok2) {
-      cout << "Good\n";
-    } else
-      cout << "Bad\n";
+    int n;
+    cin >> n;
+    vi a(n);
+    cin >> a;
+
+    int dp[n + 1];
+
+    dp[0] = a[0];
+    dp[1] = a[1];
+    dp[2] = a[2];
+
+    for (int i = 3; i < n; i++) {
+      dp[i] = min({dp[i - 1], dp[i - 2], dp[i - 3]}) + a[i];
+    }
+
+    cout << min({dp[n - 1], dp[n - 2], dp[n - 3]});
   }
 }

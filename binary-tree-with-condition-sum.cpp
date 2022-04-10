@@ -93,19 +93,49 @@ long long power(int a, int n) {
   return ans;
 }
 
+struct node {
+  int val;
+  struct node *left;
+  struct node *right;
+};
+
+int ok(struct node *node) {
+  int sum = 0;
+  if (!node || !node->left || !node->right) {
+    return 1;
+  } else {
+    if (node->left)
+      sum += node->left->val;
+    if (node->right)
+      sum += node->right->val;
+    return (node->val == sum) && ok(node->left) && ok(node->right);
+  }
+}
+
+struct node *newNode(int data) {
+  struct node *node = (struct node *)malloc(sizeof(struct node));
+  node->val = data;
+  node->left = NULL;
+  node->right = NULL;
+  return (node);
+}
+
 signed main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
   int tst(1);
   cin >> tst;
   while (tst--) {
-    string s;
-    cin >> s;
-    bool ok = s.find("010") != string::npos;
-    bool ok2 = s.find("101") != string::npos;
-    if (ok || ok2) {
-      cout << "Good\n";
-    } else
-      cout << "Bad\n";
+    struct node *root = newNode(10);
+    root->left = newNode(8);
+    root->right = newNode(2);
+    root->left->left = newNode(3);
+    root->left->right = newNode(5);
+    root->right->right = newNode(2);
+    if (ok(root)){
+    	cout<<"YES\n";
+    }else{
+    	cout<<"NO\n";
+    }
   }
 }
