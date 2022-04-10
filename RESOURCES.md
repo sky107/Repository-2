@@ -1,1 +1,338 @@
 https://codeahoy.com/2017/08/11/caching-strategies-and-how-to-choose-the-right-one/
+
+---------------
+
+
+https://codeforces.com/blog/entry/72952
+
+
+Add Key bindings => Cmd + Enter to compile & run
+
+Add cf to usr/local/bin/cf  & update to preferneces 
+
+Cmdl + Shfit + U form chrome extension upload
+
+
+
+----------------
+{
+  // To discover more customization and example client configurations, see
+  // https://lsp.sublimetext.io
+
+  // Show permanent language server status in the status bar.
+  "show_view_status": true,
+
+  // Run the server's formatProvider (if supported) on a file before saving.
+  // This option is also supported in syntax-specific settings and/or in the
+  // "settings" section of project files.
+  "lsp_format_on_save": true,
+
+  // A dictionary of code action identifiers that should be triggered on save.
+  //
+  // Code action identifiers are not officially standardized so refer to specific
+  // server's documentation on what is supported but `source.fixAll` is commonly
+  // used to apply fix-on-save code actions.
+  //
+  // This option is also supported in syntax-specific settings and/or in the
+  // "settings" section of project files. Settings from all those places will be
+  // merged and more specific (syntax and project) settings will override less
+  // specific (from LSP or Sublime settings).
+  //
+  // Only "source.*" actions are supported.
+  "lsp_code_actions_on_save": {
+    // "source.fixAll": true,
+    // "source.organizeImports": true,
+  },
+
+  // The amount of time the save tasks (like code actions on save,
+  // formatting or WillSaveWaitUntil) are each allowed to run for.
+  "on_save_task_timeout_ms": 2000,
+
+  // Open the diagnostics panel automatically on save when diagnostics level is
+  // equal to or less than:
+  // none: 0 (never open the panel automatically)
+  // error: 1
+  // warning: 2
+  // info: 3
+  // hint: 4
+  "show_diagnostics_panel_on_save": 1,
+
+  // Show errors and warnings count in the status bar
+  "show_diagnostics_count_in_view_status": false,
+
+  // Show the diagnostics description of the code
+  // under the cursor in status bar if available.
+  "show_diagnostics_in_view_status": true,
+
+  // Show highlights and gutter markers in the file views for diagnostics
+  // with level equal to or less than:
+  // none: 0 (never show)
+  // error: 1
+  // warning: 2
+  // info: 3
+  // hint: 4
+  "show_diagnostics_severity_level": 1,
+
+  // Only show diagnostics in the panel with level equal to or less than:
+  // error: 1
+  // warning: 2
+  // info: 3
+  // hint: 4
+  "diagnostics_panel_include_severity_level": 1,
+
+  // Delay showing diagnostics by this many milliseconds.
+  // The delay will only kick into action when previously there were
+  // no diagnostics in the view. If there were previous diagnostics in the view,
+  // then the delay setting here is ignored and diagnostics are updated
+  // immediately.
+  "diagnostics_delay_ms": 0,
+
+  // Add an additional delay when the auto-complete widget is currently visible.
+  // Just like the above "diagnostics_delay_ms", the unit is milliseconds.
+  // The total amount of delay would be
+  //
+  //    diagnostics_delay_ms + diagnostics_additional_delay_auto_complete_ms
+  //
+  // See also: "diagnostics_delay_ms".
+  "diagnostics_additional_delay_auto_complete_ms": 0,
+
+  // Highlighting style of "highlights": accentuating nearby text entities that
+  // are related to the one under your cursor.
+  // Valid values are "fill", "underline", "stippled", or "".
+  // When set to the empty string (""), no document highlighting is requested.
+  "document_highlight_style": "underline",
+
+  // Highlight style of code diagnostics.
+  // Can be a string, or a mapping of string->string for severity-based styling.
+  // Valid string values are "box", "underline", "stippled", "squiggly" or "".
+  // When set to a valid string value, all severities will use that style.
+  // When set to the empty string (""), no diagnostics are drawn.
+  // When disabled, gutter markers are still drawn, unless "diagnostics_gutter_marker"
+  // is set to "".
+  // Diagnostics which span multiple lines are always drawn with the "box" style.
+  // See also: "show_multiline_diagnostics_highlights".
+  "diagnostics_highlight_style": {
+    "error": "squiggly",
+    "warning": "squiggly",
+    "info": "stippled",
+    "hint": "stippled",
+  },
+
+  // Gutter marker for code diagnostics.
+  // Valid values are "dot", "circle", "bookmark", "sign" or ""
+  "diagnostics_gutter_marker": "dot",
+
+  // Enable semantic highlighting in addition to standard syntax highlighting (experimental!).
+  // Note: Must be supported by the language server and also requires a special rule in the
+  // color scheme to work. If you use none of the built-in color schemes from Sublime Text,
+  // please see the documentation under
+  //   https://lsp.sublimetext.io/customization/#semantic-highlighting
+  // for a description about how to configure your color scheme for semantic highlighting.
+  "semantic_highlighting": false,
+
+  // Show code actions:
+  // "annotation" - show an annotation on the right when code actions are available.
+  // "bulb" - show a bulb in the gutter when code actions are available.
+  // "" - don't show code actions.
+  // Note: Due to API limitations, the "bulb" icon can not be clicked so the code actions can only be triggered
+  // using a keyboard shortcut or the context menu.
+  "show_code_actions": "annotation",
+
+  // Show code lens:
+  // "annotation" - show an annotation on the right when code actions are available
+  // "phantom" - show a phantom on the top when code actions are available
+  "show_code_lens": "annotation",
+
+  // Show code actions in hover popup if available
+  "show_code_actions_in_hover": true,
+
+  // Show diagnostics spanning multiple lines in the view (as outlines).
+  // See also: "diagnostics_highlight_style".
+  "show_multiline_diagnostics_highlights": true,
+
+  // Show symbol action links in hover popup if available
+  "show_symbol_action_links": true,
+
+  // Disable Sublime Text's snippet completions.
+  "inhibit_snippet_completions": false,
+
+  // Disable Sublime Text's word completions. When set to `true`, this also disables Sublime Text's internal completion
+  // sorting algorithm and instead uses the sorting defined by the relevant language server.
+  "inhibit_word_completions": true,
+
+  // Show symbol references in Sublime's quick panel instead of the bottom panel.
+  "show_references_in_quick_panel": false,
+
+  // The maximum number of characters (approximately) before wrapping in the popup.
+  "popup_max_characters_width": 120,
+
+  // The maximum number of characters (approximately) before a scrollbar appears.
+  "popup_max_characters_height": 1000,
+
+  // Show verbose debug messages in the sublime console.
+  "log_debug": false,
+
+  // Log communication from and to language servers.
+  // Set to an array of values:
+  // - "panel" - log to the LSP Language Servers output panel
+  // - "remote" - start a local websocket server on port 9981. Can be connected to with
+  //              a websocket client to receive the log messages in real time.
+  // For backward-compatibility, when set to "true", enables the "panel" logger and when
+  // set to "false" disables logging.
+  // This output panel can be toggled from the command palette with the
+  // command "LSP: Toggle Log Panel".
+  "log_server": [
+    // "panel",
+    // "remote",
+  ],
+
+  // When logging to the "panel" (see "log_server"), if the params of the request or
+  // response or notification exceed this many characters, then print a <snip> to
+  // the panel instead. If you don't want a limit, set this to zero.
+  "log_max_size": 8192,
+
+  // User server configurations can be used to:
+  // - partially override a configuration in the "default_clients", or
+  // - create new configurations.
+  //
+  // It is **highly recommended** to download the LSP-json helper package. This
+  // is a package that auto-installs a JSON language server that will provide
+  // auto-completions for all keys in this file, and many others as well.
+  // See: https://packagecontrol.io/packages/LSP-json
+  //
+  // "clients":
+  // {
+  //   // Each new server configuration must have the following structure.
+  //   "CLIENT_NAME": // some human-friendly name
+  //   {
+  //     # ----------- The following three settings are **required** -----------
+  //
+  //     // Enable or disable this client configuration.
+  //     "enabled": true,
+  //
+  //     // The command line required to run the server.
+  //     "command": ["pyls"],
+  //
+  //     // This selector filters which views apply to this configuration, in
+  //     // the same way that a selector for a build system filters which build
+  //     // system applies to which view. To determine the base scope of your
+  //     // view, click on Tools > Developer > Show Scope Name. The first line
+  //     // in the popup is the base scope.
+  //     "selector": "source.python",
+  //
+  //     # ------ From this point onward, each key-value is **optional** -------
+  //
+  //     // An optional list of URI schemes which this client configuration
+  //     // should attach to. A well-known URI scheme is the `file` scheme. The
+  //     // scheme `buffer` is used as in-memory scratch buffer (that is when
+  //     // you create a new unsaved tab). Furthermore, the scheme `res` is used
+  //     // to denote Sublime Text resource files inside .sublime-package files,
+  //     // viewable with the _View Package File_ command from the
+  //     // _Command Palette_. Other URI schemes exist, but require different
+  //     // considerations for different language servers.  If this setting is
+  //     // not specified, then only the `file` scheme is used, meaning that this
+  //     // client configuration will only attach to views that are backed by a
+  //     // file on disk.
+  //     "schemes": ["file", "buffer", "res"],
+  //
+  //     // When you want to connect to the language server via TCP (on
+  //     // localhost), specify the port here. If you put a value of 0 here,
+  //     // then LSP will select a free port number on localhost. In that case,
+  //     // you can use the string templates $port or ${port} in the "command".
+  //     // The syntax "{port}" is also allowed, but deprecated in favor of
+  //     // $port and ${port}.
+  //     "tcp_port": 1234,
+  //
+  //     // Sent to server once using workspace/didChangeConfiguration
+  //     // notification
+  //     "settings": { },
+  //
+  //     // Sent once to server in initialize request
+  //     "initializationOptions": { },
+  //
+  //     // Disable providers if so desired
+  //     "disabled_capabilities": { },
+  //
+  //     // Extra variables to override/add to language server's environment.
+  //     "env": { },
+  //   }
+  // }
+  "clients": {
+    "clangd":
+    {
+			"enabled": true
+		},
+  },
+
+  // Default clients configuration
+  // DO NOT MODIFY THIS SETTING!
+  // Use "clients" to override settings instead!
+  "default_clients": {
+    "rust-analyzer": {
+      "command": [
+        "rust-analyzer"
+      ],
+      "selector": "source.rust",
+    },
+    "clangd": {
+      "command": [
+        "clangd"
+      ],
+      "selector": "source.c | source.c++ | source.objc | source.objc++",
+      "auto_complete_selector": "punctuation.accessor | (meta.preprocessor.include string - punctuation.definition.string.end)",
+    },
+    "erlang-ls": {
+      "command": [
+        "erlang_ls",
+        "--transport",
+        "stdio"
+      ],
+      "selector": "source.erlang",
+    },
+    "ocaml": {
+      "command": [
+        "ocaml-language-server",
+        "--stdio"
+      ],
+      "selector": "source.reason | source.ocaml",
+    },
+    "gopls": {
+      "command": [
+        "gopls"
+      ],
+      "selector": "source.go",
+    },
+    "polymer-ide": {
+      "command": [
+        "polymer-editor-service"
+      ],
+      "selector": "text.html.basic | source.html | source.js | source.css | source.json",
+      "settings": {
+        "polymer-ide.analyzeWholePackage": false,
+        "polymer-ide.fixOnSave": false,
+      },
+    },
+    "ruby": {
+      "command": [
+        "solargraph",
+        "stdio"
+      ],
+      "selector": "source.ruby | text.html.ruby",
+      "initializationOptions": {
+        "diagnostics": false,
+      },
+    },
+    "sorbet": {
+      "command": [
+        "srb",
+        "tc",
+        "--typed",
+        "true",
+        "--enable-all-experimental-lsp-features",
+        "--lsp",
+        "--disable-watchman"
+      ],
+      "selector": "source.ruby | text.html.ruby",
+    },
+  },
+}
