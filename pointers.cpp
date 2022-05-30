@@ -99,13 +99,49 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    // capturing vairable
-    auto result = [tst](int a, int b) { return a + b + tst; };
-    [tst](int a, int b) { cout << a + b + tst << '\n'; }(12, 23);
-    cout << "RSULT" << result(123, 123) << '\n';
+    int *prt = nullptr;
 
-    // [&]() { tst++; }(); // & will pull every vaiable outside scoe by refecnce
-    // means any change done inside lambda will affect outside as well if used =
-    // then only value we will get
+    int value = 112;
+    prt = &value;
+
+    // char *p_message = "Hello world!";
+
+    // cout << *p_message << '\n'; // Characters pointers are special 'H';
+    // cout << p_message << '\n';  // "Hello world!"
+
+    // char predictions[][90] = {"hello", "world"};
+
+    // const char *pred[] = {"Hellow", "yo can use as many as you want"};
+
+    // array of const car pointers
+
+    int *const cannot_pointer_to_other(nullptr);
+    // cannot_pointer_to_other=&value once assigned cannot be used for other
+
+    // -----------------------------------------------------------------------------
+    int tvalue = 2343;
+    const int *cannot_change_the_value_but_point_to_other_location(&tvalue);
+    // *cannot_change_the_value_but_point_to_other_location = 2334;// compiler
+    // error
+    int ttvalue = 2332;
+    cannot_change_the_value_but_point_to_other_location = &ttvalue;
+    // ------------------------------------------------------------------------------------
+
+    int scors[120] = {1, 12, 321, 3, 12, 321, 3, 213, 21, 312, 3};
+    int *Pointer(nullptr);
+    Pointer = scors;
+
+    cout << sizeof(Pointer);
+
+    // Dynamic Memory Allocation
+
+    int *p_n = nullptr;
+    p_n = new int;
+
+    delete p_n;
+
+    p_n = nullptr;
+
+    // Safe Practice above
   }
 }

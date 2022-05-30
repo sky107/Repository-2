@@ -103,9 +103,5 @@ signed main() {
     auto result = [tst](int a, int b) { return a + b + tst; };
     [tst](int a, int b) { cout << a + b + tst << '\n'; }(12, 23);
     cout << "RSULT" << result(123, 123) << '\n';
-
-    // [&]() { tst++; }(); // & will pull every vaiable outside scoe by refecnce
-    // means any change done inside lambda will affect outside as well if used =
-    // then only value we will get
   }
 }
