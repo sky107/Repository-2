@@ -2,6 +2,7 @@
  * Siddharth Kumar Yadav
  * sky has no limits!
  **/
+// https://codeforces.cc/contest/1689/problem/B
 
 #pragma GCC optimize("-Ofast,unroll-loops")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
