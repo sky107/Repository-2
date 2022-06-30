@@ -13,6 +13,7 @@
 #include <cmath>
 #include <functional>
 #include <iostream>
+#include <list>
 #include <map>
 #include <numeric>
 #include <queue>
@@ -20,7 +21,6 @@
 #include <stack>
 #include <string>
 #include <vector>
-
 // #include "bits/stdc++.h"
 #define int long long
 #define sz(v) ((int)(v).size())
@@ -101,6 +101,61 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    
+    // let consider three sets
+    // [1,2,3] [4,5,6,7] [8,9]
+    // non- overlapping
+
+    // find(some elemtn)=> set in which it is presetn
+    // unione merges two sets into one
+    // using set_id , using two elements
+
+    // O(n)
+
+    // Cycle detection in undirected graph
+
+    // map<int, vector<int>> g;
+
+    int n;
+    cin >> n;
+
+    vector<pair<int, int>> g;
+    for (int i = 0, x, y; i < n - 1; i++) {
+      cin >> x >> y;
+      g.push_back({x, y});
+    }
+
+    vector<int> pat(n + 1, -1);
+
+    function<int(int)> find_set = [&](int x) {
+      if (pat[x] == -1)
+        return x;
+      else
+        return find_set(pat[x]);
+      // find root leader
+    };
+
+    auto union_set = [&](int x, int y) {
+      int s1 = find_set(x);
+      int s2 = find_set(y);
+      if (s1 != s2) {
+        pat[s1] = s2;
+      }
+    };
+
+    // is contain cycle
+
+    bool ok = false;
+    for (auto edge : g) {
+      int s1 = find_set(edge.first);
+      int s2 = find_set(edge.second);
+      if (s1 != s2) {
+        union_set(s1, s2);
+      } else {
+        ok = true;
+        break;
+      }
+    }
+
+    ps(ok);
   }
 }
