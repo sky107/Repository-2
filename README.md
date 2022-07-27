@@ -30,3 +30,8 @@ https://www.codechef.com/START34D/problems/BINMIS
 
 https://www.codechef.com/START34D/problems/BSXOR
 
+
+
+-------------
+
+https://www.youtube.com/watch?v=c5HAwKX-suM&t=1697s
