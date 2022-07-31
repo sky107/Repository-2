@@ -81,5 +81,8 @@ https://www.codechef.com/START34D/problems/BSXOR
 
 
 -------------
+https://www.tutorialspoint.com/design_pattern/index.htm
+
+
 
 https://www.youtube.com/watch?v=c5HAwKX-suM&t=1697s
