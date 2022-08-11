@@ -8,6 +8,7 @@ bool isPrime(int n) {
     return false;
 
   for (int i = 5; i * i <= n; i += 6) {
+        // 6n-1.           6n+1
     if (n % i == 0 or n % (i + 2) == 0)
       return false;
 
