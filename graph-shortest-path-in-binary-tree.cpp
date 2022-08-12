@@ -33,6 +33,8 @@ signed main() {
     cin >> a >> b;
     int i = -1;
     vector<int> a1, a2;
+    
+    // root has no parent so -1 and infinte complete binary tree of form v, left:2v, right:2v+1
     for (i = b; i != -1; i = parent(i)) {
       a1.push_back(i);
     }
