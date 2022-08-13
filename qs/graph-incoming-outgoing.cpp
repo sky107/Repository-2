@@ -31,6 +31,8 @@ signed main() {
       int u, v;
       cin >> u >> v;
       g[u].push_back(v);
+      // ou[u]++;
+      // in[v]++;  this is also the same thing
     }
     vector<int> in(n), out(n);
 
