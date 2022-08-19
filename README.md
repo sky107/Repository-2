@@ -60,25 +60,6 @@ void shellSort(int a[], int len) {
 }
 ```
 
--------
-TODO PROBLEMS
-
-
-https://www.spoj.com/problems/ANARC09A/
-
-
-https://www.codechef.com/START34D/problems/AVGARR
-
-
-https://www.codechef.com/START34D/problems/GDPERM
-
-
-https://www.codechef.com/START34D/problems/BINMIS
-
-
-https://www.codechef.com/START34D/problems/BSXOR
-
-
 
 -------------
 https://www.tutorialspoint.com/design_pattern/index.htm
