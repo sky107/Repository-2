@@ -68,3 +68,5 @@ https://www.tutorialspoint.com/design_pattern/index.htm
 https://www.youtube.com/watch?v=c5HAwKX-suM&t=1697s
 
 https://www.youtube.com/watch?v=nDTv83vzKRo
+
+https://www.youtube.com/watch?v=nTaYglAhbTU
