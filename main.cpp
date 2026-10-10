@@ -101,6 +101,6 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    
+    cout << "Jai Shree Mahakal\n";
   }
 }
