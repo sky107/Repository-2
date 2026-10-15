@@ -105,7 +105,7 @@ signed main() {
     cin >> n;
     int n;
     cin >> n;
-    cout << " Hello world \n";
+    cout << " Hello world ; \n";
 
   }
 }
