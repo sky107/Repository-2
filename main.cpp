@@ -101,12 +101,7 @@ signed main() {
   int tst(1);
   cin >> tst;
   while (tst--) {
-    int n;
-    cin >> n;
-    int n;
-    cin >> n;
-    cout << " Hello world ; \n";
-
+    cout << "Jai Shree Mahakal";
   }
 }
 
